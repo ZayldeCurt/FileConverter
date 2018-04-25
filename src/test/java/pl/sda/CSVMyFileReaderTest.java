@@ -41,9 +41,12 @@ public class CSVMyFileReaderTest {
         MyGeneral dateSets=new MyGeneral();
         CSVMyFileReader reader = new CSVMyFileReader();
 
+        String CSV_FILE_NAME = "ludziska.csv";
+        String filePath = getClass().getClassLoader().getResource(CSV_FILE_NAME).getPath();
         //when
         try {
-            dateSets = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska.csv");
+//            dateSets = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska.csv");
+            dateSets = reader.readData(filePath);
         } catch (IOException e) {
             e.printStackTrace();
         }

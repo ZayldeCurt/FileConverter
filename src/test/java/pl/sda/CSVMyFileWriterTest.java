@@ -16,25 +16,30 @@ public class CSVMyFileWriterTest {
     public void testWriteData(){
 
         //given
+        String CSV_FILE_NAME_TEST_DATE = "ludziska.csv";
+
         CSVMyFileReader reader = new CSVMyFileReader();
         CSVMyFileWriter write = new CSVMyFileWriter();
         MyGeneral dateSets = null;
 
+        String filePathTestDate = getClass().getClassLoader().getResource(CSV_FILE_NAME_TEST_DATE).getPath();
+
+
         try {
-            dateSets = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska.csv");
+            dateSets = reader.readData(filePathTestDate);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         //when
         try {
-            write.writeData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska2.csv",dateSets);
+            write.writeData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\src\\test\\resources\\ludziska2.csv",dateSets);
         } catch (IOException e) {
             e.printStackTrace();
         }
         MyGeneral dateSets2 = null;
         try {
-            dateSets2 = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska2.csv");
+            dateSets2 = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\src\\test\\resources\\ludziska2.csv");
         } catch (IOException e) {
             e.printStackTrace();
         }

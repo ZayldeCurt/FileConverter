@@ -1,5 +1,6 @@
 package pl.sda;
 
+import com.itextpdf.text.DocumentException;
 import pl.sda.csv.CSVMyFileReader;
 import pl.sda.csv.CSVMyFileWriter;
 import pl.sda.csv.MyGeneral;
@@ -12,12 +13,16 @@ public class App {
 
         CSVMyFileReader reader = new CSVMyFileReader();
         CSVMyFileWriter write = new CSVMyFileWriter();
+        PDFMyFileWriter pdfWrite = new PDFMyFileWriter();
         MyGeneral dateSets;
         try {
 //            dateSets = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\ludziska.csv");
             dateSets = reader.readData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\mieszkania.csv");
-            write.writeData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\mieszkania2.csv",dateSets);
+//            write.writeData("C:\\Users\\pllsym\\IdeaProjects\\J7_FileParsing\\mieszkania2.csv",dateSets);
+            pdfWrite.writeData("",dateSets);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
             e.printStackTrace();
         }
         System.out.println("");
