@@ -1,4 +1,4 @@
 package pl.sda;
 
-public interface FileWriter {
+public interface MyFileWriter {
 }

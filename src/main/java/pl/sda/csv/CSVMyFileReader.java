@@ -7,10 +7,42 @@ import pl.sda.Person;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class CSVFileReader implements MyFileReader {
+public class CSVMyFileReader implements MyFileReader {
+
+    public MyGeneral readData(String filePath) throws IOException{
+        FileReader fileReader = new FileReader(filePath);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+
+        String line;
+        List<String> headers = new ArrayList<>();
+        MyGeneral dateSets = new MyGeneral();
+        int i=0;
+        while((line=bufferedReader.readLine()) != null && !line.isEmpty()){
+            if(i==0){
+                String[] hTemp=line.split(";");
+                for (int j = 0; j < hTemp.length; j++) headers.add(hTemp[j]);
+                dateSets.setHeaders(headers);
+                i++;
+            }
+            else{
+                String[] tmp = line.split(";");
+                Map<String,String> map = new HashMap<>();
+                for (int j = 0; j < headers.size(); j++) {
+                    map.put(headers.get(j),tmp[j]);
+                }
+                dateSets.add(map);
+            }
+        }
+        return dateSets;
+    }
+
+
+
+
+
     public List<Person> readPersonData(String filePath) throws IOException {
         FileReader fileReader = new FileReader(filePath);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

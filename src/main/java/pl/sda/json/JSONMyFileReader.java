@@ -1,6 +1,6 @@
 package pl.sda.json;
 
-import pl.sda.FileReader;
+import pl.sda.MyFileReader;
 
-public class JSONFileReader implements FileReader {
+public class JSONMyFileReader implements MyFileReader {
 }

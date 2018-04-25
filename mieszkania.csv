@@ -1,4 +1,5 @@
-name;lastName;age
-michal;swiatowy;25
-adam;nowak;12
-julia;okulska;19
+nazwa;wielkosc;cena;pietro
+pierwsze;57;300000;15
+drugie;60,5;400000;10
+trzecie;80,2;500421,2;8
+

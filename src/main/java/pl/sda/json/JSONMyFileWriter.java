@@ -1,6 +1,6 @@
 package pl.sda.json;
 
-import pl.sda.FileWriter;
+import pl.sda.MyFileWriter;
 
-public class JSONFileWriter implements FileWriter {
+public class JSONMyFileWriter implements MyFileWriter {
 }
