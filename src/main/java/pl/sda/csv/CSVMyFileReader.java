@@ -2,6 +2,7 @@ package pl.sda.csv;
 
 
 import pl.sda.MyFileReader;
+import pl.sda.MyGeneral;
 import pl.sda.Person;
 
 import java.io.BufferedReader;

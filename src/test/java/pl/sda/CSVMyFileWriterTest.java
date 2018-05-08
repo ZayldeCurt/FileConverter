@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import pl.sda.csv.CSVMyFileReader;
 import pl.sda.csv.CSVMyFileWriter;
-import pl.sda.csv.MyGeneral;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class CSVMyFileWriterTest {

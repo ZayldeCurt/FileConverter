@@ -1,19 +1,16 @@
-package pl.sda;
+package pl.sda.pdf;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import pl.sda.csv.MyGeneral;
+import pl.sda.MyFileWriter;
+import pl.sda.MyGeneral;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 public class PDFMyFileWriter implements MyFileWriter {
     @Override

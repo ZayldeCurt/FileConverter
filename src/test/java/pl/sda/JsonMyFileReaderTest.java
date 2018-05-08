@@ -1,8 +1,11 @@
 package pl.sda;
 
+import com.itextpdf.text.DocumentException;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.sda.csv.CSVMyFileReader;
+import pl.sda.json.JSONMyFileReader;
+import pl.sda.json.JSONMyFileWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,10 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CSVMyFileReaderTest {
+public class JsonMyFileReaderTest {
 
     @Test
-    public void testReadData(){
+    public void testReadData() throws IOException, DocumentException {
         //given
         MyGeneral testDate = new MyGeneral();
         List<String> headers = new ArrayList<>();
@@ -38,21 +41,20 @@ public class CSVMyFileReaderTest {
         testDate.add(map3);
 
         MyGeneral dateSets=new MyGeneral();
-        CSVMyFileReader reader = new CSVMyFileReader();
+        JSONMyFileReader reader = new JSONMyFileReader();
 
-        String CSV_FILE_NAME = "ludziska.csv";
-        String filePath = getClass().getClassLoader().getResource(CSV_FILE_NAME).getPath();
+
+        String JSON_FILE_NAME = "ludziska.json";
+        String filePath = getClass().getClassLoader().getResource(JSON_FILE_NAME).getPath();
         //when
         try {
-            dateSets = reader.readData(filePath);
+            dateSets = reader.readData(filePath.substring(1,filePath.length()));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         //then
         Assert.assertEquals(testDate,dateSets);
-
-
 
     }
 }

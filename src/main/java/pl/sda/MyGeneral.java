@@ -1,9 +1,6 @@
-package pl.sda.csv;
+package pl.sda;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class MyGeneral {
     private List<String> headers;
@@ -35,11 +32,22 @@ public class MyGeneral {
         if (o == null || getClass() != o.getClass()) return false;
         MyGeneral myGeneral = (MyGeneral) o;
 
+
+        TreeSet setOrg =new TreeSet(this.headers);
+        TreeSet setO =new TreeSet(((MyGeneral) o).headers);
+
+        if(!setOrg.equals(setO)){
+            return false;
+        }
+
+
+
+
         for (int i = 0; i < headers.size(); i++) {
-            if(!(headers.get(i).equals(myGeneral.headers.get(i)))){
-                System.out.println("expect: "+headers.get(i)+" : "+ "get: " + myGeneral.headers.get(i));
-                return false;
-            }
+//            if(!(headers.get(i).equals(myGeneral.headers.get(i)))){
+//                System.out.println("expect: "+headers.get(i)+" : "+ "get: " + myGeneral.headers.get(i));
+//                return false;
+//            }
             for (int j = 0; j < datesets.size(); j++) {
                 if(!(Objects.equals(datesets.get(j).get(headers.get(i)),myGeneral.datesets.get(j).get(headers.get(i))))){
                     System.out.println("expect: "+datesets.get(j).get(headers.get(i))+" : "+ "get: " + myGeneral.datesets.get(j).get(headers.get(i)));

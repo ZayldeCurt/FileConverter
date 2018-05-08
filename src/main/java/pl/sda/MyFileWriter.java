@@ -1,7 +1,6 @@
 package pl.sda;
 
 import com.itextpdf.text.DocumentException;
-import pl.sda.csv.MyGeneral;
 
 import java.io.IOException;
 

@@ -1,6 +1,7 @@
 package pl.sda.csv;
 
 import pl.sda.MyFileWriter;
+import pl.sda.MyGeneral;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -31,6 +32,7 @@ public class CSVMyFileWriter implements MyFileWriter {
         } finally {
             if (fileWriter != null) {
                 bufferedWriter.close();
+                fileWriter.close();
             }
         }
     }

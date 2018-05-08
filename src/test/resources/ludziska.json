@@ -1,0 +1,19 @@
+{
+  "persons": [
+    {
+      "name": "michal",
+      "age": 25,
+      "lastName": "swiatowy"
+    },
+    {
+      "lastName": "nowak",
+      "name": "adam",
+      "age": 12
+    },
+    {
+      "lastName": "okulska",
+      "name": "julia",
+      "age": 19
+    }
+  ]
+}
